@@ -1,7 +1,7 @@
 # Source Claude Design (non déployée)
 
 Copie de référence du projet Claude Design `abb2c831-3675-422e-83d5-17e1c4adf299`
-(https://claude.ai/design/p/abb2c831-3675-422e-83d5-17e1c4adf299?file=Partenaires+VocalFlow.dc.html), récupérée le 2026-09-21, resynchronisée le 2026-09-21 (règles mobile).
+(https://claude.ai/design/p/abb2c831-3675-422e-83d5-17e1c4adf299?file=Partenaires+VocalFlow.dc.html), récupérée le 2026-09-21, resynchronisée le 2026-09-21 (règles mobile, alignement des coches).
 
 - `Partenaires VocalFlow.dc.html` — la maquette (template + logique `DCLogic`)
 - `support.js`, `image-slot.js` — runtime Claude Design (générés, ne pas éditer)
