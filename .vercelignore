@@ -1,0 +1,5 @@
+# Gardé dans le dépôt Git mais exclu du déploiement Vercel
+design-source
+README.md
+.gitignore
+.gitattributes
