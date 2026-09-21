@@ -53,6 +53,7 @@
   var revealed = qs('.demo__revealed');
   var revealBtn = qs('.demo__reveal');
   var greeting = qs('.demo__greeting');
+  var card = qs('.demo__card');
 
   function showStep(step) {
     if (idle) idle.hidden = step !== 0;
@@ -89,6 +90,8 @@
         } catch (e) { /* réseau ou CSP : on affiche quand même le numéro */ }
       }
 
+      /* La carte garde la hauteur du formulaire quand le numéro s'affiche : pas de saut de mise en page (maquette). */
+      if (card) card.style.minHeight = card.getBoundingClientRect().height + 'px';
       if (greeting) greeting.textContent = (lead.prenom ? lead.prenom + ', c' : 'C') + "'est à vous : appelez-le maintenant.";
       showStep(2);
       try { revealed.focus({ preventScroll: true }); } catch (e) { revealed.focus(); }

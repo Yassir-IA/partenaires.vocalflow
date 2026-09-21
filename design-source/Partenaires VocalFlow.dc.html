@@ -36,6 +36,7 @@ a:hover{color:#c4b5fd}
 [data-m="card"]{padding:30px 22px !important}
 [data-m="btn"]{padding:15px 26px !important;font-size:16px !important}
 [data-m="tel"]{font-size:34px !important}
+[data-m="online"]{flex-direction:column !important;gap:8px !important}
 [data-m="temo"]{grid-template-columns:minmax(0,1fr) !important;max-width:360px !important}
 [data-m="soon"]{text-align:center !important;padding:0 8px !important}
 [data-m="cal"]{min-height:0 !important}
@@ -75,7 +76,7 @@ a:hover{color:#c4b5fd}
   <h2 data-m="h2" style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:0">Ne nous croyez pas sur parole : <span style="color:#a78bfa">appelez-le.</span></h2>
   <p style="max-width:640px;margin:20px auto 0;text-align:center;font-size:17px;line-height:1.7;color:#b8b6cf">Voici un agent VocalFlow, testez-le comme le ferait un de vos clients.</p>
   <div data-m="grid" style="max-width:1080px;margin:44px auto 0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr);gap:22px;align-items:stretch">
-    <div data-m="card" style="position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:44px 36px;text-align:center;box-shadow:0 0 90px rgba(124,92,246,0.14);display:flex;flex-direction:column;justify-content:center;background-image:radial-gradient(420px 260px at 50% 55%, rgba(124,92,246,0.14), transparent 70%),linear-gradient(rgba(148,163,255,0.045) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.045) 1px, transparent 1px);background-size:auto,44px 44px,44px 44px">
+    <div data-m="card" ref="{{ demoCardRef }}" style="position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:44px 36px;text-align:center;box-shadow:0 0 90px rgba(124,92,246,0.14);display:flex;flex-direction:column;justify-content:center;background-image:radial-gradient(420px 260px at 50% 55%, rgba(124,92,246,0.14), transparent 70%),linear-gradient(rgba(148,163,255,0.045) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.045) 1px, transparent 1px);background-size:auto,44px 44px,44px 44px">
       <sc-if value="{{ notRevealed }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;align-items:center;gap:22px">
           <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center">
@@ -99,7 +100,7 @@ a:hover{color:#c4b5fd}
       <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
         <div style="font-size:22px;font-weight:700;letter-spacing:-0.01em;color:#f5f4fb;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) both">{{ greeting }}</div>
         <a href="tel:+33189316089" data-m="tel" style="display:block;margin-top:14px;font-size:56px;font-weight:800;letter-spacing:-0.01em;line-height:1.1;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.08s both">+33 1 89 31 60 89</a>
-        <div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.16s both"><span style="width:7px;height:7px;border-radius:50%;background:#34d399;animation:pulseDot 2s ease infinite"></span><span style="font-size:14.5px;color:#9b97b8">Notre agent décroche dans la seconde, 24h/24.</span></div>
+        <div data-m="online" style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.16s both"><span style="width:7px;height:7px;border-radius:50%;background:#34d399;animation:pulseDot 2s ease infinite;flex-shrink:0"></span><span style="font-size:14.5px;color:#9b97b8">Notre agent décroche dans la seconde, 24h/24.</span></div>
       </sc-if>
     </div>
     <div data-m="card" style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.4);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;justify-content:center;gap:22px">
@@ -210,8 +211,10 @@ class Component extends DCLogic {
       leadPrenom: S.prenom, leadEmail: S.email,
       onPrenom: (e) => this.setState({ prenom: e.target.value }),
       onEmail: (e) => this.setState({ email: e.target.value }),
+      demoCardRef: (el) => { this._demoCard = el; },
       submitLead: (e) => {
         e.preventDefault();
+        if (this._demoCard) { this._demoCard.style.minHeight = this._demoCard.getBoundingClientRect().height + 'px'; }
         const lead = { prenom: S.prenom.trim(), email: S.email.trim(), date: new Date().toISOString(), source: 'partenaires-demo' };
         try { const k = 'vocalflow_leads'; const arr = JSON.parse(localStorage.getItem(k) || '[]'); arr.push(lead); localStorage.setItem(k, JSON.stringify(arr)); } catch (err) {}
         const hook = this.props.leadWebhook;

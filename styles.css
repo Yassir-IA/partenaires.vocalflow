@@ -239,7 +239,7 @@ ul, ol { padding: 0; list-style: none; }
 
 .status { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .status__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulseDot 2s ease infinite; }
-.status__dot--small { width: 7px; height: 7px; }
+.status__dot--small { width: 7px; height: 7px; flex-shrink: 0; }
 .status__text { font-size: 12px; letter-spacing: .22em; font-weight: 700; color: var(--muted-2); text-transform: uppercase; }
 .status--small { gap: 9px; margin-top: 16px; }
 .status__hint { font-size: 14.5px; color: var(--muted); }
@@ -399,6 +399,7 @@ ul, ol { padding: 0; list-style: none; }
   .demo__card, .demo__tips { padding: 30px 22px; }
   .btn--demo { padding: 15px 26px; font-size: 16px; }
   .demo__phone { font-size: 34px; }
+  .demo__revealed .status--small { flex-direction: column; gap: 8px; } /* data-m="online" */
   .btn--submit { white-space: normal; }
 
   /* data-m="temo" / "soon" */
