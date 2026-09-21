@@ -21,6 +21,24 @@ a:hover{color:#c4b5fd}
 @keyframes riseIn{from{opacity:0;transform:translateY(26px);filter:blur(10px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
 @keyframes waveBar{0%,100%{transform:scaleY(0.35)}50%{transform:scaleY(1)}}
 @keyframes ringOut{0%{transform:scale(0.62);opacity:0.9}100%{transform:scale(1.35);opacity:0}}
+@media (max-width:768px){
+[data-m="hero"]{padding:72px 20px 60px !important}
+[data-m="h1"]{font-size:38px !important;line-height:1.12 !important;margin-top:24px !important}
+[data-m="sub"]{font-size:13px !important;letter-spacing:0.05em !important;margin-top:20px !important}
+[data-m="checks"]{flex-direction:column !important;align-items:flex-start !important;gap:12px !important;margin:26px auto 0 !important;width:max-content !important;max-width:100% !important}
+[data-m="cta"]{padding:17px 26px !important;font-size:14px !important;letter-spacing:0.05em !important;text-align:center !important;justify-content:center !important;width:100% !important;box-sizing:border-box !important}
+[data-m="sec"]{padding:60px 20px 30px !important}
+[data-m="h2"]{font-size:30px !important;line-height:1.2 !important}
+[data-m="h2"] br{display:none}
+[data-m="grid"]{grid-template-columns:minmax(0,1fr) !important;gap:18px !important}
+[data-m="card"]{padding:30px 22px !important}
+[data-m="btn"]{padding:15px 26px !important;font-size:16px !important}
+[data-m="tel"]{font-size:34px !important}
+[data-m="temo"]{grid-template-columns:minmax(0,1fr) !important;max-width:360px !important}
+[data-m="soon"]{text-align:center !important;padding:0 8px !important}
+[data-m="cal"]{min-height:0 !important}
+[data-m="calf"]{height:760px !important}
+}
 </style>
 <script src="./image-slot.js"></script>
 </helmet>
@@ -28,7 +46,7 @@ a:hover{color:#c4b5fd}
 
 <div ref="{{ spotRef }}" style="position:fixed;top:0;left:0;width:640px;height:640px;margin:-320px 0 0 -320px;z-index:0;pointer-events:none;background:radial-gradient(circle closest-side, rgba(78,217,234,0.13), transparent 100%);will-change:transform;transform:translate3d(-1000px,-1000px,0)"></div>
 
-<section data-screen-label="1 Hero" style="position:relative;padding:120px 24px 90px;background-image:radial-gradient(700px 460px at 12% 18%, rgba(91,108,255,0.16), transparent 65%),radial-gradient(640px 420px at 88% 26%, rgba(139,92,246,0.14), transparent 65%)">
+<section data-screen-label="1 Hero" data-m="hero" style="position:relative;padding:120px 24px 90px;background-image:radial-gradient(700px 460px at 12% 18%, rgba(91,108,255,0.16), transparent 65%),radial-gradient(640px 420px at 88% 26%, rgba(139,92,246,0.14), transparent 65%)">
   <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(148,163,255,0.05) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.05) 1px, transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%);mask-image:radial-gradient(ellipse 75% 62% at 50% 32%, #000 0%, transparent 72%)"></div>
   <div style="position:relative;max-width:980px;margin:0 auto;text-align:center">
     <div style="display:flex;justify-content:center;margin-bottom:34px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.05s both"><img src="assets/vocalflow-logo.png" alt="VocalFlow" style="height:44px;display:block"></div>
@@ -37,25 +55,25 @@ a:hover{color:#c4b5fd}
         <span style="font-size:12.5px;letter-spacing:0.22em;font-weight:700;color:#cfcde0">ACCÈS PARTENAIRE VOCALFLOW</span>
       </div>
     </div>
-    <h1 style="font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;text-transform:uppercase;color:#f5f4fb;margin:30px auto 0;max-width:900px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.28s both">Vendez de <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">l'IA vocale</span> à vos clients.</h1>
-    <p style="margin:26px auto 0;max-width:760px;font-size:16px;line-height:1.7;letter-spacing:0.06em;font-weight:600;text-transform:uppercase;color:#b8b6cf;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.4s both">VocalFlow est l'infrastructure vocale en marque blanche réservée aux agences IA, avec les voix les plus réalistes du marché</p>
-    <div style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.5s both">
+    <h1 data-m="h1" style="font-size:60px;font-weight:800;line-height:1.08;letter-spacing:-0.02em;text-transform:uppercase;color:#f5f4fb;margin:30px auto 0;max-width:900px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.28s both">Vendez de <span style="background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">l'IA vocale</span> à vos clients.</h1>
+    <p data-m="sub" style="margin:26px auto 0;max-width:760px;font-size:16px;line-height:1.7;letter-spacing:0.06em;font-weight:600;text-transform:uppercase;color:#b8b6cf;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.4s both">VocalFlow est l'infrastructure vocale en marque blanche réservée aux agences IA, avec les voix les plus réalistes du marché</p>
+    <div data-m="checks" style="display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:30px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.5s both">
       <div style="display:flex;align-items:center;gap:10px"><span style="width:22px;height:22px;border-radius:50%;background:rgba(52,211,153,0.14);border:1px solid rgba(52,211,153,0.6);color:#34d399;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;color:#e8e6f5">Sans écrire une ligne de code</span></div>
       <div style="display:flex;align-items:center;gap:10px"><span style="width:22px;height:22px;border-radius:50%;background:rgba(52,211,153,0.14);border:1px solid rgba(52,211,153,0.6);color:#34d399;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;color:#e8e6f5">Sous votre marque</span></div>
       <div style="display:flex;align-items:center;gap:10px"><span style="width:22px;height:22px;border-radius:50%;background:rgba(52,211,153,0.14);border:1px solid rgba(52,211,153,0.6);color:#34d399;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:16px;color:#e8e6f5">Avec une équipe d'IA vocale derrière vous</span></div>
     </div>
     <div style="display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:40px;animation:riseIn 0.85s cubic-bezier(0.22,1,0.36,1) 0.62s both">
-      <a href="#acces" style="display:inline-flex;align-items:center;gap:10px;padding:19px 40px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:800;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7);color:#ffffff">Demander un accès partenaire <span style="font-size:18px">→</span></a>
+      <a href="#acces" data-m="cta" style="display:inline-flex;align-items:center;gap:10px;padding:19px 40px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:800;font-size:16px;letter-spacing:0.08em;text-transform:uppercase;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7);color:#ffffff">Demander un accès partenaire <span style="font-size:18px">→</span></a>
       <div style="font-size:14px;color:#8f8ca8">Accès sur sélection - appel de 30 minutes.</div>
     </div>
   </div>
 </section>
 
-<section id="demo-live" data-screen-label="2 Test en direct" style="position:relative;padding:70px 24px 40px">
-  <h2 style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:0">Ne nous croyez pas sur parole : <span style="color:#a78bfa">appelez-le.</span></h2>
+<section id="demo-live" data-screen-label="2 Test en direct" data-m="sec" style="position:relative;padding:70px 24px 40px">
+  <h2 data-m="h2" style="font-size:44px;font-weight:800;letter-spacing:-0.02em;text-align:center;color:#f5f4fb;margin:0">Ne nous croyez pas sur parole : <span style="color:#a78bfa">appelez-le.</span></h2>
   <p style="max-width:640px;margin:20px auto 0;text-align:center;font-size:17px;line-height:1.7;color:#b8b6cf">Voici un agent VocalFlow, testez-le comme le ferait un de vos clients.</p>
-  <div style="max-width:1080px;margin:44px auto 0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr);gap:22px;align-items:stretch">
-    <div style="position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:44px 36px;text-align:center;box-shadow:0 0 90px rgba(124,92,246,0.14);display:flex;flex-direction:column;justify-content:center;background-image:radial-gradient(420px 260px at 50% 55%, rgba(124,92,246,0.14), transparent 70%),linear-gradient(rgba(148,163,255,0.045) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.045) 1px, transparent 1px);background-size:auto,44px 44px,44px 44px">
+  <div data-m="grid" style="max-width:1080px;margin:44px auto 0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,0.75fr);gap:22px;align-items:stretch">
+    <div data-m="card" style="position:relative;overflow:hidden;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:44px 36px;text-align:center;box-shadow:0 0 90px rgba(124,92,246,0.14);display:flex;flex-direction:column;justify-content:center;background-image:radial-gradient(420px 260px at 50% 55%, rgba(124,92,246,0.14), transparent 70%),linear-gradient(rgba(148,163,255,0.045) 1px, transparent 1px),linear-gradient(90deg, rgba(148,163,255,0.045) 1px, transparent 1px);background-size:auto,44px 44px,44px 44px">
       <sc-if value="{{ notRevealed }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;flex-direction:column;align-items:center;gap:22px">
           <div style="position:relative;width:104px;height:104px;display:flex;align-items:center;justify-content:center">
@@ -64,7 +82,7 @@ a:hover{color:#c4b5fd}
             <span style="position:relative;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px -8px rgba(124,92,246,0.75)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6.6 3.5c.5-.4 1.2-.3 1.6.2l2 2.9c.4.5.3 1.2-.1 1.6l-1.3 1.2c-.3.3-.4.8-.2 1.2a12.5 12.5 0 0 0 4.8 4.8c.4.2.9.1 1.2-.2l1.2-1.3c.4-.4 1.1-.5 1.6-.1l2.9 2c.5.4.6 1.1.2 1.6l-1.3 1.7c-.8 1-2.1 1.5-3.4 1.1C10 18.7 5.3 14 3.8 8.2 3.4 6.9 3.9 5.6 4.9 4.8z" fill="#fff"></path></svg></span>
           </div>
           <div style="display:flex;align-items:center;justify-content:center;gap:10px"><span style="width:8px;height:8px;border-radius:50%;background:#34d399;animation:pulseDot 2s ease infinite"></span><span style="font-size:12px;letter-spacing:0.22em;font-weight:700;color:#8f8ca8">AGENT DISPONIBLE</span></div>
-          <div onClick="{{ reveal }}" style="display:inline-flex;align-items:center;gap:10px;padding:17px 38px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:17px;white-space:nowrap;cursor:pointer;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7)">Lancer l'appel <span style="font-size:18px">→</span></div>
+          <div onClick="{{ reveal }}" data-m="btn" style="display:inline-flex;align-items:center;gap:10px;padding:17px 38px;border-radius:999px;background:linear-gradient(93deg,#5b8cff,#8b5cf6);color:#ffffff;font-weight:700;font-size:17px;white-space:nowrap;cursor:pointer;box-shadow:0 10px 34px -6px rgba(124,92,246,0.55);transition:all .2s ease" style-hover="transform:translateY(-2px);box-shadow:0 16px 40px -6px rgba(124,92,246,0.7)">Lancer l'appel <span style="font-size:18px">→</span></div>
         </div>
       </sc-if>
       <sc-if value="{{ showForm }}" hint-placeholder-val="{{ false }}">
@@ -78,11 +96,11 @@ a:hover{color:#c4b5fd}
       </sc-if>
       <sc-if value="{{ revealed }}" hint-placeholder-val="{{ false }}">
         <div style="font-size:22px;font-weight:700;letter-spacing:-0.01em;color:#f5f4fb;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) both">{{ greeting }}</div>
-        <a href="tel:+33189316089" style="display:block;margin-top:14px;font-size:56px;font-weight:800;letter-spacing:-0.01em;line-height:1.1;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.08s both">+33 1 89 31 60 89</a>
+        <a href="tel:+33189316089" data-m="tel" style="display:block;margin-top:14px;font-size:56px;font-weight:800;letter-spacing:-0.01em;line-height:1.1;background:linear-gradient(92deg,#6d9bff,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.08s both">+33 1 89 31 60 89</a>
         <div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:16px;animation:riseIn 0.7s cubic-bezier(0.22,1,0.36,1) 0.16s both"><span style="width:7px;height:7px;border-radius:50%;background:#34d399;animation:pulseDot 2s ease infinite"></span><span style="font-size:14.5px;color:#9b97b8">Notre agent décroche dans la seconde, 24h/24.</span></div>
       </sc-if>
     </div>
-    <div style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.4);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;justify-content:center;gap:22px">
+    <div data-m="card" style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.4);border-radius:22px;padding:32px 30px;display:flex;flex-direction:column;justify-content:center;gap:22px">
       <div style="display:flex;align-items:center;gap:9px;font-size:12px;letter-spacing:0.24em;font-weight:700;color:#a78bfa;text-transform:uppercase;padding-bottom:16px;border-bottom:1px solid rgba(167,139,250,0.2)"><span style="display:inline-flex;align-items:center;gap:3.5px;height:10px"><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.1s ease-in-out infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.3s ease-in-out 0.15s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 0.9s ease-in-out 0.3s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.2s ease-in-out 0.45s infinite"></span></span>À essayer</div>
       <div style="display:flex;gap:14px;align-items:flex-start"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;flex-shrink:0">1</span><span style="font-size:16.5px;line-height:1.6;color:#e8e6f5;padding-top:2px">Essayez de prendre un rendez-vous.</span></div>
       <div style="display:flex;gap:14px;align-items:flex-start"><span style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#5b8cff,#8b5cf6);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;flex-shrink:0">2</span><span style="font-size:16.5px;line-height:1.6;color:#e8e6f5;padding-top:2px">Posez une question à laquelle il n'est pas censé répondre.</span></div>
@@ -91,10 +109,10 @@ a:hover{color:#c4b5fd}
   </div>
 </section>
 
-<section data-screen-label="3 Témoignages" style="padding:100px 24px 40px">
+<section data-screen-label="3 Témoignages" data-m="sec" style="padding:100px 24px 40px">
   <div style="text-align:center;font-size:12.5px;letter-spacing:0.28em;font-weight:700;color:#a78bfa;text-transform:uppercase">Des agences partenaires</div>
-  <h2 style="font-size:40px;font-weight:800;letter-spacing:-0.01em;line-height:1.22;text-align:center;text-transform:uppercase;color:#f5f4fb;margin:18px auto 0;max-width:1000px">Elles vendent déjà de <span style="color:#a78bfa">l'IA vocale</span> à leurs clients<br><span style="color:#a78bfa">sous leur marque</span>, avec <span style="color:#a78bfa">notre techno</span> et <span style="color:#a78bfa">notre équipe</span> derrière :</h2>
-  <div style="{{ temoGridStyle }}">
+  <h2 data-m="h2" style="font-size:40px;font-weight:800;letter-spacing:-0.01em;line-height:1.22;text-align:center;text-transform:uppercase;color:#f5f4fb;margin:18px auto 0;max-width:1000px">Elles vendent déjà de <span style="color:#a78bfa">l'IA vocale</span> à leurs clients<br><span style="color:#a78bfa">sous leur marque</span>, avec <span style="color:#a78bfa">notre techno</span> et <span style="color:#a78bfa">notre équipe</span> derrière :</h2>
+  <div data-m="temo" style="{{ temoGridStyle }}">
     <sc-for list="{{ temoignages }}" as="t" hint-placeholder-count="1">
       <div style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.09);border-radius:22px;overflow:hidden;display:flex;flex-direction:column">
         <div style="position:relative;aspect-ratio:9/16;background:#0d0d22;border-bottom:1px solid rgba(255,255,255,0.07)">
@@ -111,17 +129,17 @@ a:hover{color:#c4b5fd}
     </sc-for>
   </div>
   <sc-if value="{{ showComingSoon }}" hint-placeholder-val="{{ true }}">
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:30px">
+    <div data-m="soon" style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:30px">
       <span style="display:inline-flex;align-items:center;gap:3px;height:10px"><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.1s ease-in-out infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.3s ease-in-out 0.15s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 0.9s ease-in-out 0.3s infinite"></span><span style="width:1.5px;height:10px;border-radius:2px;background:#22d3ee;transform-origin:center;animation:waveBar 1.2s ease-in-out 0.45s infinite"></span></span>
       <span style="font-size:13.5px;color:#77748f">D'autres agences partenaires témoignent bientôt <span style="color:#4f4c66">·</span> +10 partenaires leaders</span>
     </div>
   </sc-if>
 </section>
 
-<section id="acces" data-screen-label="4 Accès partenaire" style="position:relative;padding:100px 24px 100px;background-image:radial-gradient(640px 420px at 90% 40%, rgba(139,92,246,0.08), transparent 65%)">
-  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:48px;align-items:start">
+<section id="acces" data-screen-label="4 Accès partenaire" data-m="sec" style="position:relative;padding:100px 24px 100px;background-image:radial-gradient(640px 420px at 90% 40%, rgba(139,92,246,0.08), transparent 65%)">
+  <div data-m="grid" style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:48px;align-items:start">
     <div>
-      <h2 style="font-size:42px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:#f5f4fb;margin:0">Demander un <span style="color:#a78bfa">accès partenaire</span></h2>
+      <h2 data-m="h2" style="font-size:42px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;color:#f5f4fb;margin:0">Demander un <span style="color:#a78bfa">accès partenaire</span></h2>
       <p style="margin:20px 0 0;font-size:16.5px;line-height:1.7;color:#b8b6cf">VocalFlow n'est pas en libre-service. Nous ouvrons l'accès à un nombre limité d'agences chaque mois, après un appel de 30 minutes pour vérifier que ça a du sens des deux côtés.</p>
       <div style="margin-top:30px;font-size:11.5px;letter-spacing:0.22em;color:#77748f;font-weight:700;text-transform:uppercase">Ce qu'on voit pendant l'appel</div>
       <div style="margin-top:16px;display:flex;flex-direction:column;gap:13px">
@@ -130,9 +148,9 @@ a:hover{color:#c4b5fd}
         <div style="display:flex;gap:11px"><span style="width:22px;height:22px;border-radius:50%;border:1px solid rgba(167,139,250,0.6);color:#a78bfa;font-size:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">✓</span><span style="font-size:15.5px;line-height:1.55;color:#e8e6f5">Le fonctionnement du support entre vous, vos clients et nous.</span></div>
       </div>
     </div>
-    <div style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.45);border-radius:22px;overflow:hidden;box-shadow:0 0 70px -22px rgba(124,92,246,0.5);min-height:640px;position:relative">
+    <div data-m="cal" style="background:rgba(139,92,246,0.05);border:1px solid rgba(167,139,250,0.45);border-radius:22px;overflow:hidden;box-shadow:0 0 70px -22px rgba(124,92,246,0.5);min-height:640px;position:relative">
       <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#6d6a85;font-size:13px;letter-spacing:0.18em;font-weight:700;pointer-events:none">CHARGEMENT DU CALENDRIER…</div>
-      <iframe src="{{ calendlySrc }}" title="Réserver un appel partenaire" style="position:relative;display:block;width:100%;height:660px;border:0;background:transparent"></iframe>
+      <iframe src="{{ calendlySrc }}" title="Réserver un appel partenaire" data-m="calf" style="position:relative;display:block;width:100%;height:660px;border:0;background:transparent"></iframe>
     </div>
   </div>
 </section>

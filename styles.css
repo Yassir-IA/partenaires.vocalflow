@@ -373,35 +373,40 @@ ul, ol { padding: 0; list-style: none; }
    Volontairement non géré : la maquette Claude Design joue toutes les animations (anneaux, entrées, onde, point)
    même quand Windows/macOS demandent un mouvement réduit, et le site doit lui être identique. */
 
-/* ---------- Responsive ---------- */
-@media (max-width: 900px) {
+/* ---------- Responsive ----------
+   Règles mobile de la maquette (bloc @media (max-width:768px) avec attributs data-m), reportées classe par classe. */
+@media (max-width: 768px) {
   .nav { padding: 0 20px; height: 64px; }
-  .demo__grid, .access__grid { grid-template-columns: 1fr; }
-  .access__grid { gap: 36px; }
-  .access__cal { min-height: 0; }
-  .footer__inner { padding: 30px 20px 34px; }
-  .temo, .access { padding-top: 72px; }
-  .access { padding-bottom: 72px; }
-}
-
-@media (max-width: 720px) {
   .btn--back__full { display: none; }
   .btn--back__short { display: inline; }
   .brand img { height: 19px; }
   .brand__name { font-size: 17px; }
-  .hero { padding: 88px 20px 64px; }
-  .hero__checks { flex-direction: column; align-items: center; gap: 14px; }
-  .btn--hero { padding: 17px 26px; font-size: 14px; white-space: normal; text-align: center; }
-  .demo { padding: 56px 20px 32px; }
-  .demo__card { padding: 36px 22px; }
-  .demo__tips { padding: 26px 22px; }
-  .temo { padding: 72px 20px 32px; }
-  .access { padding: 64px 20px; }
-  .access__iframe { height: 760px; } /* Calendly empile les étapes sur mobile */
-  .btn--submit { white-space: normal; }
-}
 
-@media (max-width: 400px) {
-  .btn--demo { padding: 15px 28px; font-size: 16px; }
+  /* data-m="hero" / "h1" / "sub" / "checks" / "cta" */
+  .hero { padding: 72px 20px 60px; }
+  .hero__title { font-size: 38px; line-height: 1.12; margin-top: 24px; }
+  .hero__lead { font-size: 13px; letter-spacing: .05em; margin-top: 20px; }
+  .hero__checks { flex-direction: column; align-items: flex-start; gap: 12px; margin: 26px auto 0; width: max-content; max-width: 100%; }
+  .btn--hero { padding: 17px 26px; font-size: 14px; letter-spacing: .05em; text-align: center; justify-content: center; width: 100%; white-space: normal; }
+
+  /* data-m="sec" / "h2" / "grid" / "card" / "btn" / "tel" */
+  .demo, .temo, .access { padding: 60px 20px 30px; }
+  .demo__title, .temo__title, .access__title { font-size: 30px; line-height: 1.2; }
+  .temo__title br { display: none; }
+  .demo__grid, .access__grid { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .demo__card, .demo__tips { padding: 30px 22px; }
+  .btn--demo { padding: 15px 26px; font-size: 16px; }
+  .demo__phone { font-size: 34px; }
+  .btn--submit { white-space: normal; }
+
+  /* data-m="temo" / "soon" */
+  .temo__grid { grid-template-columns: minmax(0, 1fr); max-width: 360px; }
+  .temo__soon { text-align: center; padding: 0 8px; }
+
+  /* data-m="cal" / "calf" */
+  .access__cal { min-height: 0; }
+  .access__iframe { height: 760px; }
+
+  .footer__inner { padding: 30px 20px 34px; }
   .simple { padding-top: 40px; }
 }

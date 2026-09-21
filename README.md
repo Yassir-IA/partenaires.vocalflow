@@ -105,9 +105,8 @@ un enregistrement CNAME `partenaires` → `cname.vercel-dns.com` (Vercel affiche
 
 ## Écarts assumés avec la maquette
 
-- **Responsive** : la maquette est desktop uniquement ; sous 900 px les deux grilles (démo, accès) passent sur une colonne, les
-  titres sont équilibrés (`text-wrap: balance`), les coches du hero s'empilent sous 720 px et l'iframe Calendly est plus haute
-  (Calendly empile ses étapes sur mobile).
+- **Responsive** : la maquette définit ses règles mobile sous 768 px (bloc `@media` + attributs `data-m`) ; elles sont reportées
+  telles quelles dans `styles.css` (hero compact, titres 30/38 px, grilles sur une colonne, coches empilées, numéro 34 px, Calendly 760 px).
 - **Police** : Inter est servie depuis le site au lieu de Google Fonts (RGPD, pas d'appel tiers).
 - **Pied de page** : liens « Mentions légales » et « Confidentialité » ajoutés (obligatoires en France) ; la maquette n'a que le logo et le copyright.
 - **Accessibilité ajoutée** : labels invisibles sur les champs, focus déplacé vers le formulaire puis vers le numéro révélé,
