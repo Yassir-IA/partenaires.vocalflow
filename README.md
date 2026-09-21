@@ -93,9 +93,9 @@ un enregistrement CNAME `partenaires` → `cname.vercel-dns.com` (Vercel affiche
 - **Démo en direct** : le bouton « Lancer l'appel » affiche un formulaire prénom + email, puis le numéro `+33 1 89 31 60 89`
   (lien `tel:` dans `index.html`). Chaque lead est gardé dans le `localStorage` du visiteur (clé `vocalflow_leads`).
 - **Webhook de leads** : `LEAD_WEBHOOK` dans `main.js` pointe vers le workflow n8n « VocalFlow — Leads démo partenaires (page marque blanche) »
-  (`https://n8n.srv959719.hstgr.cloud/webhook/partenaires-demo-lead`). Chaque lead `{ prenom, email, date, source }` est validé (syntaxe, adresses jetables,
-  puis existence d'un serveur mail sur le domaine via une requête DNS MX), dédoublonné (30 jours), ajouté au Google Sheet « Leads VocalFlow - Landing page » (onglet « Liste leads : Partenaires Marque blanches », colonnes Date, Prénom, Email, Source) et signalé par
-  email à contact@vocal-flow.fr. Un email dont le domaine n'a pas de serveur mail déclenche l'alerte (marquée « non vérifié ») mais n'est pas ajouté au Sheet. L'origine n8n est autorisée dans `connect-src` (`vercel.json`) ; changer d'URL impose de mettre à jour les deux.
+  (`https://n8n.srv959719.hstgr.cloud/webhook/partenaires-demo-lead`). Chaque lead `{ prenom, email, date, source }` est validé (syntaxe), dédoublonné (30 jours), vérifié par
+  Bouncer (usebouncer.com, identifiant n8n « Bouncer », en-tête x-api-key), ajouté au Google Sheet « Leads VocalFlow - Landing page » (onglet « Liste leads : Partenaires Marque blanches », colonnes Date, Prénom, Email, Source, Bouncer (validé ou non)) et signalé par
+  email à contact@vocal-flow.fr. Tous les leads vont dans le Sheet ; la colonne Bouncer vaut ✅ (deliverable), ❌ (undeliverable, risky, unknown) ou ❔ (API indisponible), et l'alerte reprend ce verdict. L'origine n8n est autorisée dans `connect-src` (`vercel.json`) ; changer d'URL impose de mettre à jour les deux.
 - **Témoignages** : un seul pour l'instant (Déyann Geraldes, Alloconduite, vidéo Gumlet). Pour en ajouter, dupliquer
   l'`<article class="temo__card">` dans `index.html` : la grille passe automatiquement en 2 puis 3 colonnes. À partir de 2
   témoignages, retirer le bloc `.temo__soon` (« D'autres agences partenaires témoignent bientôt »), comme le fait la maquette.
