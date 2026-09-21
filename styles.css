@@ -370,14 +370,8 @@ ul, ol { padding: 0; list-style: none; }
 .legal .eyebrow { text-align: left; }
 
 /* ---------- Mouvement réduit ----------
-   Les entrées, l'onde et les anneaux restent, mais en fondus seuls : plus de déplacement, de zoom ni de flou. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .rise, .demo__form, .demo__greeting, .demo__phone, .demo__revealed .status--small { animation-name: fadeOnly; }
-  .rings__ring { animation: none; opacity: .5; }
-  .btn, .field { transition: none; }
-  .btn--primary:hover { transform: none; }
-}
+   Volontairement non géré : la maquette Claude Design joue toutes les animations (anneaux, entrées, onde, point)
+   même quand Windows/macOS demandent un mouvement réduit, et le site doit lui être identique. */
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

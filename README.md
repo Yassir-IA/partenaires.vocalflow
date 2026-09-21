@@ -9,7 +9,7 @@ Prêt pour GitHub + Vercel, sur le même modèle que le dossier voisin `Landing 
 | Fichier | Rôle |
 |---|---|
 | `index.html` | La page (4 sections : hero, test en direct, témoignages, accès partenaire + pied de page) |
-| `styles.css` | Styles : jetons de couleur dans `:root`, `@font-face` Inter, animations, responsive, `prefers-reduced-motion`, pages légales et 404 |
+| `styles.css` | Styles : jetons de couleur dans `:root`, `@font-face` Inter, animations, responsive, pages légales et 404 |
 | `main.js` | Halo qui suit la souris, démo en 3 étapes (agent → formulaire → numéro), lien Calendly centralisé, webhook de leads (optionnel) |
 | `mentions-legales.html` | Mentions légales |
 | `politique-confidentialite.html` | Politique de confidentialité (RGPD), adaptée à cette page (prénom + email + appels à l'agent + Calendly + Gumlet) |
@@ -112,6 +112,7 @@ un enregistrement CNAME `partenaires` → `cname.vercel-dns.com` (Vercel affiche
 - **Pied de page** : liens « Mentions légales » et « Confidentialité » ajoutés (obligatoires en France) ; la maquette n'a que le logo et le copyright.
 - **Accessibilité ajoutée** : labels invisibles sur les champs, focus déplacé vers le formulaire puis vers le numéro révélé,
   `role="list"` sur les listes stylées, lien d'évitement.
+- **Mouvement réduit** : non géré volontairement. Si Windows a « Effets d'animation » désactivé, les animations jouent quand même, comme dans Claude Design.
 - **Contraste** : les gris de la maquette `#77748f` / `#6d6a85` (petits textes) sont sous le seuil AA 4,5:1 ; conservés par fidélité.
 
 ## Sécurité / vie privée
