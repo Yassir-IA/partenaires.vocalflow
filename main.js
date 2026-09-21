@@ -7,7 +7,7 @@
   /* ---- Réglages ---- */
   var CALENDLY_URL = 'https://calendly.com/contact-vocal-flow/appel-d-acces-vocalflow';
   /* Webhook n8n « VocalFlow — Leads démo partenaires » : reçoit chaque lead en JSON { prenom, email, date, source },
-     l'ajoute au Google Sheet (onglet « Partenaires démo ») et envoie une alerte Gmail.
+     l'ajoute au Google Sheet (onglet « Liste leads : Partenaires Marque blanches », colonnes Date, Prénom, Email, Source) et envoie une alerte Gmail.
      Vide = les leads restent seulement dans le localStorage du visiteur (clé vocalflow_leads).
      L'origine du webhook doit figurer dans connect-src (vercel.json), sinon la CSP bloque l'envoi. */
   var LEAD_WEBHOOK = 'https://n8n.srv959719.hstgr.cloud/webhook/partenaires-demo-lead';
