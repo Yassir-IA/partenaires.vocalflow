@@ -92,9 +92,10 @@ un enregistrement CNAME `partenaires` → `cname.vercel-dns.com` (Vercel affiche
   `primary_color`) sont ceux de la maquette.
 - **Démo en direct** : le bouton « Lancer l'appel » affiche un formulaire prénom + email, puis le numéro `+33 1 89 31 60 89`
   (lien `tel:` dans `index.html`). Chaque lead est gardé dans le `localStorage` du visiteur (clé `vocalflow_leads`).
-- **Webhook de leads** : `LEAD_WEBHOOK` dans `main.js` (vide par défaut). Renseigner une URL n8n / Make / Zapier pour recevoir
-  `{ prenom, email, date, source }` en POST JSON. **Ajouter l'origine du webhook à `connect-src` dans `vercel.json`**, sinon la
-  CSP bloque l'envoi. Sans webhook, les leads ne quittent pas le navigateur du visiteur.
+- **Webhook de leads** : `LEAD_WEBHOOK` dans `main.js` pointe vers le workflow n8n « VocalFlow — Leads démo partenaires (page marque blanche) »
+  (`https://n8n.srv959719.hstgr.cloud/webhook/partenaires-demo-lead`). Chaque lead `{ prenom, email, date, source }` est validé,
+  dédoublonné (30 jours), ajouté au Google Sheet « Leads VocalFlow - Landing page » (onglet « Partenaires démo ») et signalé par
+  email à contact@vocal-flow.fr. L'origine n8n est autorisée dans `connect-src` (`vercel.json`) ; changer d'URL impose de mettre à jour les deux.
 - **Témoignages** : un seul pour l'instant (Déyann Geraldes, Alloconduite, vidéo Gumlet). Pour en ajouter, dupliquer
   l'`<article class="temo__card">` dans `index.html` : la grille passe automatiquement en 2 puis 3 colonnes. À partir de 2
   témoignages, retirer le bloc `.temo__soon` (« D'autres agences partenaires témoignent bientôt »), comme le fait la maquette.

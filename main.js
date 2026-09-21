@@ -6,10 +6,11 @@
 
   /* ---- Réglages ---- */
   var CALENDLY_URL = 'https://calendly.com/contact-vocal-flow/appel-d-acces-vocalflow';
-  /* Webhook (n8n, Make, Zapier…) qui reçoit chaque lead de la démo en JSON : { prenom, email, date, source }.
-     Vide = les leads sont seulement gardés dans le localStorage du visiteur (clé vocalflow_leads).
-     Si vous renseignez une URL, ajoutez son origine à connect-src dans vercel.json, sinon l'envoi sera bloqué par la CSP. */
-  var LEAD_WEBHOOK = '';
+  /* Webhook n8n « VocalFlow — Leads démo partenaires » : reçoit chaque lead en JSON { prenom, email, date, source },
+     l'ajoute au Google Sheet (onglet « Partenaires démo ») et envoie une alerte Gmail.
+     Vide = les leads restent seulement dans le localStorage du visiteur (clé vocalflow_leads).
+     L'origine du webhook doit figurer dans connect-src (vercel.json), sinon la CSP bloque l'envoi. */
+  var LEAD_WEBHOOK = 'https://n8n.srv959719.hstgr.cloud/webhook/partenaires-demo-lead';
 
   function qs(sel, root) { return (root || document).querySelector(sel); }
   function qsa(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
@@ -84,7 +85,7 @@
 
       if (LEAD_WEBHOOK) {
         try {
-          fetch(LEAD_WEBHOOK, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead), keepalive: true });
+          fetch(LEAD_WEBHOOK, { method: 'POST', mode: 'cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead), keepalive: true }).catch(function () {});
         } catch (e) { /* réseau ou CSP : on affiche quand même le numéro */ }
       }
 
